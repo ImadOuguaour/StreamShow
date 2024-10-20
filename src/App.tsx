@@ -8,6 +8,7 @@ import messages_en from './locales/en.json';
 // Charger les composants en lazy loading
 const Home = React.lazy(() => import('./pages/Home/index'));
 const Movies = React.lazy(() => import('./pages/Movies/index'));
+const Tv = React.lazy(() => import('./pages/Tv/index'));
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/movies" element={<Movies />} />
+            <Route path="/series" element={<Tv />} />
           </Routes>
         </Suspense>
     </IntlProvider>

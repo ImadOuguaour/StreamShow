@@ -1,29 +1,27 @@
 import React, { useState } from 'react';
-import { Movie } from '../../pages/Home/HomeTypes';
 import { FaInfoCircle, FaStar } from 'react-icons/fa';
 import Modal from 'react-modal';
+import { MediaCardProps } from '../../pages/Movies/MoviesTypes';
 
-interface MovieCardProps {
-    movie: Movie;
-}
-
-const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
+const MediaCard: React.FC<MediaCardProps> = ({ media }) => {
     const [showModal, setShowModal] = useState(false);
 
     const toggleModal = () => {
         setShowModal(!showModal);
     };
 
+    const title = 'title' in media ? media.title : media.name;
+
     return (
-        <div className="movie-card bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 relative w-64">
+        <div className="media-card bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 relative w-64">
             <img 
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
-                alt={movie.title} 
+                src={`https://image.tmdb.org/t/p/w500${media.poster_path}`} 
+                alt={title} 
                 className="w-62 h-auto object-cover" 
             />
-            <h3 className="text-md font-semibold p-2">{movie.title}</h3>
+            <h3 className="text-md font-semibold p-2">{title}</h3>
             <div className="flex items-center justify-between p-3">
-                <span className="text-yellow-500"><FaStar className="text-yellow-500 mr-1" />{movie.vote_average.toFixed(1)}</span>
+                <span className="text-yellow-500"><FaStar className="text-yellow-500 mr-1" />{media.vote_average.toFixed(1)}</span>
                 <button 
                     onClick={toggleModal} 
                     className="text-blue-500 hover:text-blue-700"
@@ -37,16 +35,16 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
             <Modal
                 isOpen={showModal}
                 onRequestClose={toggleModal}
-                contentLabel="Movie Details"
+                contentLabel="media Details"
                 className="modal"
                 overlayClassName="overlay"
             >
-                <h2 className="text-xl font-bold">{movie.title}</h2>
-                <p className="text-gray-600">{movie.overview}</p>
+                <h2 className="text-xl font-bold">{title}</h2>
+                <p className="text-gray-600">{media.overview}</p>
                 <div className="mt-4">
                     <img 
-                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
-                        alt={movie.title} 
+                        src={`https://image.tmdb.org/t/p/w500${media.poster_path}`} 
+                        alt={title} 
                         className="w-48 h-auto rounded"
                     />
                 </div>
@@ -63,4 +61,4 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
 
 Modal.setAppElement('#root');
 
-export default MovieCard;
+export default MediaCard;

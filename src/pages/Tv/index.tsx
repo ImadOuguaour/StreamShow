@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
-import FeaturedMovie from "../../components/FeaturedMovie";
 import { RootState, useAppDispatch, useAppSelector } from "../../store";
-import { fetchMovies } from "./MoviesThunks";
 import Loading from "../../components/Loading";
 import Error from "../../components/Error";
+import { fetchTv } from "./TvThunks";
+import FeaturedMovie from "../../components/FeaturedMovie";
 import MediaList from "../../components/MediaList";
 
-const Movies: React.FC = () => {
+const Tv: React.FC = () => {
     const dispatch = useAppDispatch();
-    const { movies, loadingMovies, errorMovies } = useAppSelector((state: RootState) => state.movies);
+    const { tv, loadingTv, errorTv } = useAppSelector((state: RootState) => state.series);
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
-        dispatch(fetchMovies(currentPage));
+        dispatch(fetchTv(currentPage));
     }, [dispatch, currentPage]);
 
     const handleNextPage = () => {
@@ -25,16 +25,16 @@ const Movies: React.FC = () => {
 
     return (
         <div className="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen p-4">
-            {movies?.length > 0 && <FeaturedMovie movie={movies[0]} />}
-            {loadingMovies ? (
+            {tv?.length > 0 && <FeaturedMovie movie={tv[0]} />}
+            {loadingTv ? (
                 <Loading />
-            ) : errorMovies ? (
-                <Error error={errorMovies} />
+            ) : errorTv ? (
+                <Error error={errorTv} />
             ) : (
-                <MediaList medias={movies} currentPage={currentPage} onNextPage={handleNextPage} onPreviousPage={handlePreviousPage} />
+                <MediaList medias={tv} currentPage={currentPage} onNextPage={handleNextPage} onPreviousPage={handlePreviousPage} />
             )}
         </div>
     );
 };
 
-export default Movies;
+export default Tv;

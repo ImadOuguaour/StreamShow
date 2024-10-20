@@ -1,9 +1,9 @@
 import React from 'react';
-import MovieCard from '../MovieCard';
-import { MovieListProps } from '../../pages/Movies/MoviesTypes';
+import MediaCard from '../MediaCard';
+import { MediaListProps } from '../../pages/Movies/MoviesTypes';
 
-const MovieList: React.FC<MovieListProps> = ({
-    movies,
+const MediaList: React.FC<MediaListProps> = ({
+    medias,
     currentPage,
     onNextPage,
     onPreviousPage,
@@ -11,8 +11,8 @@ const MovieList: React.FC<MovieListProps> = ({
     return (
         <>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-                {movies.map((movie) => (
-                    <MovieCard movie={movie} key={movie.id} />
+                {medias.map((media) => (
+                    <MediaCard media={media} key={media.id} />
                 ))}
             </div>
             <div className="flex justify-between mt-4">
@@ -35,4 +35,4 @@ const MovieList: React.FC<MovieListProps> = ({
     );
 };
 
-export default MovieList;
+export default MediaList;

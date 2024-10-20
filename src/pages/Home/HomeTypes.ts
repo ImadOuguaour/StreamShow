@@ -1,21 +1,7 @@
-interface Movie {
-  id: number;
-  title: string;
-  backdrop_path: string;
-  poster_path: string;
-  overview: string;
-  vote_average: number;
-}
+import { Movie } from "../Movies/MoviesTypes";
+import { Tv } from "../Tv/TvTypes";
 
-interface Tv {
-  id: number;
-  name: string;
-  backdrop_path: string;
-  poster_path: string;
-  overview: string;
-  vote_average: number;
-}
-  
+ 
 interface HomeState {
   popularMovies: Movie[];
   popularTv: Tv[];
@@ -25,4 +11,4 @@ interface HomeState {
   errorPopularTv: string | null;
 }
 
-export type {Movie, HomeState, Tv}
+export type {HomeState}

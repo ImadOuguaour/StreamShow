@@ -3,12 +3,14 @@ import HomeSlice from './pages/Home/HomeSlice';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import MoviesSlice from './pages/Movies/MoviesSlice';
 import SearchBarSlice from './pages/SearchBar/SearchBarSlice';
+import TvSlice from './pages/Tv/TvSlice';
 
 const store = configureStore({
   reducer: {
     home: HomeSlice,
     movies: MoviesSlice,
     search: SearchBarSlice,
+    series: TvSlice
   }
 });
 

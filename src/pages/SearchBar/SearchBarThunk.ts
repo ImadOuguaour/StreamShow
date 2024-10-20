@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { AppThunk } from '../../store';
 import { fetchSearchInit, fetchSearchMovieSuccess, fetchSearchTvSuccess, fetchSearchFailed } from './SearchBarSlice';
-import { MediaTypeEnum, SearchResult } from './SearchBarTypes';
+import { SearchResult } from './SearchBarTypes';
+import { MediaTypeEnum } from '../../constants/mediaType';
 
 const API_URL = import.meta.env.VITE_TMDB_API_URL;
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;

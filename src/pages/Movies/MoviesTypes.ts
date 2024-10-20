@@ -1,17 +1,28 @@
-import { Movie, Tv } from "../Home/HomeTypes";
+import { Tv } from "../Tv/TvTypes";
 
+interface Movie {
+    id: number;
+    title: string;
+    backdrop_path: string;
+    poster_path: string;
+    overview: string;
+    vote_average: number;
+}
 interface MoviesState {
     movies: Movie[];
     loadingMovies: boolean;
     errorMovies: string | null;
 }
 
-interface MovieListProps {
-    movies: Movie[];
+interface MediaListProps {
+    medias: Movie[] | Tv[];
     currentPage: number;
     onNextPage: () => void;
-    onPreviousPage: () => void;
-    getTitle: (item: Movie | Tv) => string,
+    onPreviousPage: () => void; 
 }
 
-export type {MoviesState, MovieListProps};
+interface MediaCardProps {
+    media: Movie | Tv;
+}
+
+export type {Movie, MoviesState, MediaListProps, MediaCardProps};

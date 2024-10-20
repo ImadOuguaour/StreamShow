@@ -1,4 +1,4 @@
-import { ButtonNext, ButtonPrev } from "../components/SliderButtons";
+import { ButtonNext, ButtonPrev } from "../components/MediaSlider/SliderButtons";
 
 const sliderSettings : object = {
     dots: true,

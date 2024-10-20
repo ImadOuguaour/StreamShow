@@ -1,3 +1,4 @@
+import { MediaTypeEnum } from "../../constants/mediaType"
 
 interface SearchResult {
     poster_path : string,
@@ -13,11 +14,6 @@ interface SearchState {
     tv: SearchResult[],
     loading: boolean,
     error: null | string,
-}
-
-export enum MediaTypeEnum {
-    TV = 'tv',
-    MOVIE = "movie"
 }
 
 export type {SearchState , SearchResult}
