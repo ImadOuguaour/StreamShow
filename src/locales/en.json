@@ -1,0 +1,11 @@
+{
+    "welcome": "Welcome to MovieDB",
+    "home": "Home",
+    "movies": "Movies",
+    "series": "Series",
+    "searchPlaceholder": "Search...",
+    "search": "Search",
+    "showingNow": "Now Showing",
+    "popularMovies": "Popular Movies",
+    "popularTv": "Popular Series"
+}
