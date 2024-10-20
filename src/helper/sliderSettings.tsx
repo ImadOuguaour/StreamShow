@@ -2,30 +2,41 @@ import { ButtonNext, ButtonPrev } from "../components/SliderButtons";
 
 const sliderSettings : object = {
     dots: true,
-    dotsClass: 'slick-dots custom-dots',
     infinite: true,
     autoplay: true,
     autoplaySpeed: 3000,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 3,
+    slidesToShow: 5,
+    slidesToScroll: 4,
     nextArrow: <ButtonNext />,
     prevArrow: <ButtonPrev />,
     responsive: [
         {
-        breakpoint: 1024,
+            breakpoint: 1400,
+            settings: {
+                slidesToShow: 5,
+            },
+        },
+        {
+        breakpoint: 1200,
         settings: {
-            slidesToShow: 3,
+            slidesToShow: 4,
         },
         },
         {
-        breakpoint: 768,
+            breakpoint: 1080,
+            settings: {
+                slidesToShow: 3,
+            },
+            },
+        {
+        breakpoint: 800,
         settings: {
             slidesToShow: 2,
         },
         },
         {
-        breakpoint: 640,
+        breakpoint: 600,
         settings: {
             slidesToShow: 1,
         },

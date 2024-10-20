@@ -1,8 +1,9 @@
 import React from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
+import { SearchBar } from '../../pages/SearchBar';
 
 const Header: React.FC = () => {
-const intl = useIntl(); 
   return (
     <nav className="bg-gray-900 p-4">
       <div className="mx-auto flex flex-wrap justify-between items-center">
@@ -11,34 +12,22 @@ const intl = useIntl();
         <div className="flex flex-col md:flex-row md:items-center w-full md:w-auto">
           <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 md:mr-4">
             <li>
-              <a href="/" className="text-white hover:text-gray-400">
+              <Link to="/" className="text-white hover:text-gray-400">
                 <FormattedMessage id="home" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/movies" className="text-white hover:text-gray-400">
+              <Link to="/movies" className="text-white hover:text-gray-400">
                 <FormattedMessage id="movies" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/series" className="text-white hover:text-gray-400">
+              <Link to="/series" className="text-white hover:text-gray-400">
                 <FormattedMessage id="series" />
-              </a>
+              </Link>
             </li>
           </ul>
-          <form className="flex items-center w-full md:w-auto">
-            <input
-              type="text"
-              placeholder={intl.formatMessage({ id: "searchPlaceholder" })}
-              className="px-2 py-1 rounded-md text-gray-800"
-            />
-            <button
-              type="submit"
-              className="ml-2 px-4 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-400"
-            >
-              <FormattedMessage id="search" />
-            </button>
-          </form>
+          <SearchBar />
         </div>
       </div>
     </nav>
