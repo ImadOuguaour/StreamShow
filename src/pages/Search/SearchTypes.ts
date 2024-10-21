@@ -11,10 +11,10 @@ interface SearchResult {
     release_date : string
 }
 interface SearchState {
-    searchedMovies: SearchResult[],
-    searchedTv: SearchResult[],
+    resultSearch: SearchResult[],
     loading: boolean,
     error: null | string,
+    totalResults: number,   
 }
 
 export type {SearchState , SearchResult}

@@ -40,6 +40,7 @@ export default [
       '@typescript-eslint/no-unused-vars': 'warn', // Avertir sur les variables inutilisées
       'react-hooks/rules-of-hooks': 'error', // Vérifie les règles des hooks
       'react-hooks/exhaustive-deps': 'warn', // Avertit sur les dépendances manquantes
+      'constructor-super': 'off', // Désactive la règle constructor-super
       // Règle pour l'ordre d'importation
       'import/order': [
         'error',
@@ -60,5 +61,5 @@ export default [
       ],
     },
   },
-  js.configs.recommended,
+  js.configs.recommended, // Règles recommandées d'ESLint
 ];

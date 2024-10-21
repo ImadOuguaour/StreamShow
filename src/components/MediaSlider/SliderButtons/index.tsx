@@ -23,7 +23,7 @@ export const ButtonNext: React.FC<any> = (props) => {
     <div
       className={`${className} text-white cursor-pointer`}
       onClick={onClick}
-      style={{ ...style, display: "block", right: "10px", zIndex: 1 }}
+      style={{ ...style, display: "block", right: "5px", zIndex: 1 }}
     >
       &#9654; {/* Flèche droite */}
     </div>

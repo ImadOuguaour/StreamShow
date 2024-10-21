@@ -1,4 +1,4 @@
-import { SearchResult } from "../SearchBar/SearchBarTypes";
+import { SearchResult } from "../Search/SearchTypes";
 import { Tv } from "../Tv/TvTypes";
 
 interface Movie {

@@ -3,7 +3,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 import HomeSlice from './pages/Home/HomeSlice';
 import MoviesSlice from './pages/Movies/MoviesSlice';
-import SearchBarSlice from './pages/SearchBar/SearchBarSlice';
+import SearchBarSlice from './pages/Search/SearchSlice';
 import TvSlice from './pages/Tv/TvSlice';
 
 const store = configureStore({

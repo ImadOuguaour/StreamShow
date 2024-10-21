@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Movie } from "../../pages/Movies/MoviesTypes";
-import { SearchResult } from "../../pages/SearchBar/SearchBarTypes";
+import { SearchResult } from "../../pages/Search/SearchTypes";
 import { Tv } from "../../pages/Tv/TvTypes";
 import Error from "../Error";
 import Loading from "../Loading";

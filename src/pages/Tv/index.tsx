@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { RootState, useAppDispatch, useAppSelector } from "../../store";
 import FeaturedMedia from "../../components/FeaturedMedia";
-import { clearSearch } from "../SearchBar/SearchBarSlice";
+import { clearSearch } from "../Search/SearchSlice";
 import DisplayMedia from "../../components/DisplayMedia";
 
 import { fetchTv } from "./TvThunks";
@@ -10,7 +10,6 @@ import { fetchTv } from "./TvThunks";
 const Tv: React.FC = () => {
     const dispatch = useAppDispatch();
     const { tv, loadingTv, errorTv } = useAppSelector((state: RootState) => state.series);
-    const { searchedTv,loading, error } = useAppSelector((state: RootState) => state.search);
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
@@ -29,30 +28,17 @@ const Tv: React.FC = () => {
     };
 
     return (
-        <div className="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen p-4">
-          {searchedTv?.length > 0 ? (
-            <DisplayMedia
-              currentPage={currentPage}
-              error={error}
-              loading={loading}
-              medias={searchedTv}
-              onNextPage={handleNextPage}
-              onPreviousPage={handlePreviousPage}
-            />
-          ) : (
-            <>
-              {tv?.length > 0 && <FeaturedMedia media={tv[0]} />}
-              <DisplayMedia
-                currentPage={currentPage}
-                error={errorTv}
-                loading={loadingTv}
-                medias={tv}
-                onNextPage={handleNextPage}
-                onPreviousPage={handlePreviousPage}
-              />
-            </>
-          )}
-        </div>
+      <div className="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen p-4">
+        {tv?.length > 0 && <FeaturedMedia media={tv[0]} />}
+        <DisplayMedia
+          currentPage={currentPage}
+          error={errorTv}
+          loading={loadingTv}
+          medias={tv}
+          onNextPage={handleNextPage}
+          onPreviousPage={handlePreviousPage}
+        />
+      </div>
     );
 };
 
