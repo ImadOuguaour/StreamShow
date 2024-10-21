@@ -8,11 +8,21 @@ interface Movie {
     poster_path: string;
     overview: string;
     vote_average: number;
+    release_date: string;
+    genres: GenreMedia[];
+    runtime: number;
+}
+
+interface GenreMedia {
+    name: string
 }
 interface MoviesState {
     movies: Movie[];
     loadingMovies: boolean;
     errorMovies: string | null;
+    movie: null | Movie;
+    loadingDetailsMovie: boolean;
+    errorDetailMovie: string | null;
 }
 
 interface MediaListProps {
@@ -26,4 +36,4 @@ interface MediaCardProps {
     media: Movie | Tv | SearchResult;
 }
 
-export type {Movie, MoviesState, MediaListProps, MediaCardProps};
+export type {Movie, MoviesState, MediaListProps, MediaCardProps, GenreMedia};

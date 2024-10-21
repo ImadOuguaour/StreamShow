@@ -6,6 +6,9 @@ const initialState: MoviesState = {
   movies: [],
   loadingMovies: false,
   errorMovies: null,
+  movie: null,
+  loadingDetailsMovie: false,
+  errorDetailMovie: null
 };
 
 const MoviesSlice = createSlice({
@@ -23,9 +26,21 @@ const MoviesSlice = createSlice({
     fetchMoviesInit: (state) =>{
         state.loadingMovies= true;
         state.errorMovies = null;
+    },
+    fetchDetailsMovieFailed: (state) =>{
+      state.loadingDetailsMovie = false;
+      state.errorDetailMovie = 'Movie not available';
+    },
+    fetchDetailsMovieSuccess: (state, action) =>{
+        state.loadingDetailsMovie = false;
+        state.movie= action.payload;
+    },
+    fetchDetailsMovieInit: (state) =>{
+        state.loadingDetailsMovie= true;
+        state.errorDetailMovie = null;
     }
   },
 });
 
 export default MoviesSlice.reducer;
-export const {fetchMoviesFailed, fetchMoviesSuccess, fetchMoviesInit} = MoviesSlice.actions;
+export const {fetchMoviesFailed, fetchMoviesSuccess, fetchMoviesInit, fetchDetailsMovieFailed, fetchDetailsMovieSuccess, fetchDetailsMovieInit} = MoviesSlice.actions;
