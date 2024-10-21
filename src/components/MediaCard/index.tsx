@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaInfoCircle, FaStar } from 'react-icons/fa';
 import Modal from 'react-modal';
+
 import { MediaCardProps } from '../../pages/Movies/MoviesTypes';
 
 const MediaCard: React.FC<MediaCardProps> = ({ media }) => {
@@ -15,17 +16,17 @@ const MediaCard: React.FC<MediaCardProps> = ({ media }) => {
     return (
         <div className="media-card bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 relative w-64">
             <img 
-                src={`https://image.tmdb.org/t/p/w500${media.poster_path}`} 
                 alt={title} 
                 className="w-62 h-auto object-cover" 
+                src={`https://image.tmdb.org/t/p/w500/${media.poster_path}`} 
             />
             <h3 className="text-md font-semibold p-2">{title}</h3>
             <div className="flex items-center justify-between p-3">
                 <span className="text-yellow-500"><FaStar className="text-yellow-500 mr-1" />{media.vote_average.toFixed(1)}</span>
                 <button 
-                    onClick={toggleModal} 
+                    aria-label="More details" 
                     className="text-blue-500 hover:text-blue-700"
-                    aria-label="More details"
+                    onClick={toggleModal}
                 >
                     <FaInfoCircle />
                 </button>
@@ -33,24 +34,24 @@ const MediaCard: React.FC<MediaCardProps> = ({ media }) => {
 
             {/* Modal pour les détails du film */}
             <Modal
+                className="modal"
+                contentLabel="media Details"
                 isOpen={showModal}
                 onRequestClose={toggleModal}
-                contentLabel="media Details"
-                className="modal"
                 overlayClassName="overlay"
             >
                 <h2 className="text-xl font-bold">{title}</h2>
                 <p className="text-gray-600">{media.overview}</p>
                 <div className="mt-4">
                     <img 
-                        src={`https://image.tmdb.org/t/p/w500${media.poster_path}`} 
                         alt={title} 
-                        className="w-48 h-auto rounded"
+                        className="w-48 h-auto rounded" 
+                        src={`https://image.tmdb.org/t/p/w500${media.poster_path}`}
                     />
                 </div>
                 <button 
-                    onClick={toggleModal} 
-                    className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+                    className="mt-4 bg-blue-500 text-white px-4 py-2 rounded" 
+                    onClick={toggleModal}
                 >
                     Close
                 </button>

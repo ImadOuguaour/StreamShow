@@ -1,5 +1,7 @@
 import axios from 'axios';
+
 import { AppThunk } from '../../store';
+
 import { fetchPopularMoviesFailed, fetchPopularMoviesInit, fetchPopularMoviesSuccess, fetchPopularTvFailed, fetchPopularTvInit, fetchPopularTvSuccess } from './HomeSlice';
 
 const API_URL = import.meta.env.VITE_TMDB_API_URL;

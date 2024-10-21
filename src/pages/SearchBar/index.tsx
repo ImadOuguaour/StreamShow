@@ -1,8 +1,11 @@
+import React from "react";
 import { useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useSearchParams } from "react-router-dom";
-import { fetchSearch } from "./SearchBarThunk";
+
 import { useAppDispatch } from "../../store";
+
+import { fetchSearch } from "./SearchBarThunk";
 
 
 export const SearchBar:React.FC = () => {
@@ -25,19 +28,20 @@ export const SearchBar:React.FC = () => {
     const handleSearch = (event:React.ChangeEvent<HTMLInputElement>) => {
         event.preventDefault();
         dispatch(fetchSearch(searchValue));
+        setSearchValue('');
     }
     return(
         <form className="flex items-center w-full md:w-auto" onSubmit={handleSearch}>
             <input
-              type="text"
-              value={searchValue}
+              className="px-2 py-1 rounded-md text-gray-800"
               onChange={handleSearchChanged}
               placeholder={intl.formatMessage({ id: "searchPlaceholder" })}
-              className="px-2 py-1 rounded-md text-gray-800"
+              type="text"
+              value={searchValue}
             />
             <button
-              type="submit"
               className="ml-2 px-4 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-400"
+              type="submit"
             >
               <FormattedMessage id="search" />
             </button>

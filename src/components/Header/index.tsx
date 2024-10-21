@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+
 import { SearchBar } from '../../pages/SearchBar';
 
 const Header: React.FC = () => {
@@ -12,17 +13,17 @@ const Header: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-center w-full md:w-auto">
           <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 md:mr-4">
             <li>
-              <Link to="/" className="text-white hover:text-gray-400">
+              <Link className="text-white hover:text-gray-400" to="/">
                 <FormattedMessage id="home" />
               </Link>
             </li>
             <li>
-              <Link to="/movies" className="text-white hover:text-gray-400">
+              <Link className="text-white hover:text-gray-400" to="/movies">
                 <FormattedMessage id="movies" />
               </Link>
             </li>
             <li>
-              <Link to="/series" className="text-white hover:text-gray-400">
+              <Link className="text-white hover:text-gray-400" to="/series">
                 <FormattedMessage id="series" />
               </Link>
             </li>

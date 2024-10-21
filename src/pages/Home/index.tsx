@@ -1,11 +1,14 @@
 import React, { useEffect, useRef } from 'react';
-import { fetchPopularMovies, fetchPopularTv } from './HomeThunks';
+import { FormattedMessage } from 'react-intl';
+
 import { RootState, useAppDispatch, useAppSelector } from '../../store';
 import Loading from '../../components/Loading';
 import MediaSlider from '../../components/MediaSlider';
 import Error from '../../components/Error';
 import sliderSettings from '../../helper/sliderSettings';
-import { FormattedMessage } from 'react-intl';
+
+import { fetchPopularMovies, fetchPopularTv } from './HomeThunks';
+
 
 const Home: React.FC = () => {
   const firstRender = useRef(true);

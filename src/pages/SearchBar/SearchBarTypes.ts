@@ -1,6 +1,7 @@
 import { MediaTypeEnum } from "../../constants/mediaType"
 
 interface SearchResult {
+    id: number,
     poster_path : string,
     overview : string,
     backdrop_path : string,
@@ -10,8 +11,8 @@ interface SearchResult {
     release_date : string
 }
 interface SearchState {
-    movies: SearchResult[],
-    tv: SearchResult[],
+    searchedMovies: SearchResult[],
+    searchedTv: SearchResult[],
     loading: boolean,
     error: null | string,
 }

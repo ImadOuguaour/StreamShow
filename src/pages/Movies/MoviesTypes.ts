@@ -1,3 +1,4 @@
+import { SearchResult } from "../SearchBar/SearchBarTypes";
 import { Tv } from "../Tv/TvTypes";
 
 interface Movie {
@@ -15,14 +16,14 @@ interface MoviesState {
 }
 
 interface MediaListProps {
-    medias: Movie[] | Tv[];
+    medias: Movie[] | Tv[] | SearchResult[];
     currentPage: number;
     onNextPage: () => void;
     onPreviousPage: () => void; 
 }
 
 interface MediaCardProps {
-    media: Movie | Tv;
+    media: Movie | Tv | SearchResult;
 }
 
 export type {Movie, MoviesState, MediaListProps, MediaCardProps};

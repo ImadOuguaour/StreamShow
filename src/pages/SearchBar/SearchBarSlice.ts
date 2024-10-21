@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { SearchState } from './SearchBarTypes';
 
 const initialState: SearchState = {
-  movies: [],
-  tv: [],
+  searchedMovies: [],
+  searchedTv: [],
   loading: false,
   error: null,
 };
@@ -18,18 +19,24 @@ const SearchBarSlice = createSlice({
     },
     fetchSearchTvSuccess: (state, action) => {
         state.loading = false;
-        state.tv= action.payload;
+        state.searchedTv= action.payload;
     },
     fetchSearchMovieSuccess: (state, action) =>{
         state.loading = false;
-        state.movies= action.payload;
+        state.searchedMovies= action.payload;
     },
     fetchSearchInit: (state) =>{
         state.loading= true;
         state.error = null;
-    }
+    },
+    clearSearch: (state) =>{
+      state.loading= false;
+      state.error = null;
+      state.searchedMovies= [];
+      state.searchedTv= [];
+  }
   },
 });
 
 export default SearchBarSlice.reducer;
-export const {fetchSearchFailed, fetchSearchTvSuccess, fetchSearchMovieSuccess, fetchSearchInit} = SearchBarSlice.actions;
+export const {fetchSearchFailed, fetchSearchTvSuccess, fetchSearchMovieSuccess, fetchSearchInit, clearSearch} = SearchBarSlice.actions;

@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { HomeState } from '../../pages/Home/HomeTypes';
 
 const initialState: HomeState = {

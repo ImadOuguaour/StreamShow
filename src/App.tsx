@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
+
 import Header from './components/Header';
 import Loading from './components/Loading';
 import messages_en from './locales/en.json';
@@ -16,9 +17,9 @@ const App: React.FC = () => {
         <Header />
         <Suspense fallback={<Loading />}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/movies" element={<Movies />} />
-            <Route path="/series" element={<Tv />} />
+            <Route element={<Home />} path="/" />
+            <Route element={<Movies />} path="/movies" />
+            <Route element={<Tv />} path="/series" />
           </Routes>
         </Suspense>
     </IntlProvider>

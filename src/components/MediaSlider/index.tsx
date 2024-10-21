@@ -1,6 +1,8 @@
+import React from 'react';
 import Slider from 'react-slick';
-import MediaCard from "../MediaCard";
 import { memo } from "react";
+
+import MediaCard from "../MediaCard";
 import { Movie } from '../../pages/Movies/MoviesTypes';
 import { Tv } from '../../pages/Tv/TvTypes';
 

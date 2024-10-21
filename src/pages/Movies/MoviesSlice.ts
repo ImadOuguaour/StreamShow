@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { MoviesState } from './MoviesTypes';
 
 const initialState: MoviesState = {
