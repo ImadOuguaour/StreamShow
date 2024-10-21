@@ -7,5 +7,7 @@
     "search": "Search",
     "showingNow": "Now Showing",
     "popularMovies": "Popular Movies",
-    "popularTv": "Popular Series"
+    "popularTv": "Popular Series",
+    "noItemFound": "No movie/serie found",
+    "itemsFound": "Movie/Serie found"
 }

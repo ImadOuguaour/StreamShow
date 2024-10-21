@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# StreamShow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+StreamShow is a web application built with React and Vite that allows users to discover movies and TV shows by fetching data from the public API of The Movie Database (TMDb).
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Home page displaying the most popular movies and TV shows
+- Page listing only movies
+- Page listing only TV shows
+- Search for movies and TV shows: Allows users to search for movies and TV series
+- Movie/TV show details
 
-## Expanding the ESLint configuration
+## Techs
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+StreamShow uses a number of open source librairies to work properly:
 
-- Configure the top-level `parserOptions` property like this:
+- ReactJs 'v18'
+- TypeScript 'v5.5.4'
+- Redux-toolkit
+- react-slick
+- react-router-dom
+- tailwindcss
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Installation
+
+StreamShow requires [Node.js](https://nodejs.org/) v17+ to run.
+
+To run this project, you need to create a .env file at the root of the project that will contain the following variables:
+
+```sh
+VITE_API_KEY=
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Install the dependencies and devDependencies and start the server.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+cd StreamShow
+npm i
 ```
+
+### Want to see project live click [here]
+
+## License
+
+MIT
+
+[here]: https://imadouguaour.github.io/StreamShow/

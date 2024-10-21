@@ -2,6 +2,7 @@ import React from "react";
 import { FormattedMessage } from "react-intl";
 import { memo } from "react";
 
+import { IMAGE_ORIGANL_API_URL } from "../../constants/config";
 import { Movie } from "../../pages/Movies/MoviesTypes";
 import { Tv } from "../../pages/Tv/TvTypes";
 
@@ -16,7 +17,7 @@ const FeaturedMedia: React.FC<{ media: Movie | Tv }> = ({ media }) => {
         <img 
           alt={title} 
           className="w-full h-64 object-cover rounded-lg" 
-          src={`https://image.tmdb.org/t/p/original${media.backdrop_path}`} 
+          src={`${IMAGE_ORIGANL_API_URL}/${media.backdrop_path}`} 
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <h3 className="text-white text-xl">{title}</h3>

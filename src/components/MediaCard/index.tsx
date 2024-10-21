@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaInfoCircle, FaStar } from 'react-icons/fa';
 import Modal from 'react-modal';
 
+import { IMAGE_API_URL } from '../../constants/config'; 
 import image from '../../assets/image.png';
 import { MediaCardProps } from '../../pages/Movies/MoviesTypes';
 
@@ -19,7 +20,7 @@ const MediaCard: React.FC<MediaCardProps> = ({ media }) => {
             <img 
                 alt={title} 
                 className="w-62 h-auto object-cover" 
-                src={media.poster_path ? `https://image.tmdb.org/t/p/w500${media.poster_path}` : image}
+                src={media.poster_path ? `${IMAGE_API_URL}/${media.poster_path}` : image}
             />
             <h3 className="text-md font-semibold p-2">{title}</h3>
             <div className="flex items-center justify-between p-3">
@@ -47,7 +48,7 @@ const MediaCard: React.FC<MediaCardProps> = ({ media }) => {
                     <img 
                         alt={title} 
                         className="w-48 h-auto rounded" 
-                        src={media.poster_path ? `https://image.tmdb.org/t/p/w500${media.poster_path}` : image}
+                        src={media.poster_path ? `${IMAGE_API_URL}/${media.poster_path}` : image}
                     />
                 </div>
                 <button 

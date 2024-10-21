@@ -7,5 +7,7 @@
     "searchPlaceholder": "Chercher...",
     "showingNow": "À l'affiche",
     "popularMovies": "Films populaires",
-    "popularTv": "Séries populaires"
+    "popularTv": "Séries populaires",
+    "noItemFound": "Aucun film/série trouvé",
+    "itemsFound": "Film/Série trouvés"
 }

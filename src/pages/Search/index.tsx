@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { useSearchParams } from "react-router-dom";
 
 import { RootState, useAppDispatch, useAppSelector } from "../../store";
@@ -63,9 +63,9 @@ const Search: React.FC = () => {
       </div>
       <div className="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-2 items-start justify-center pl-3">
         { (totalResults === 0) ?
-            (<p>no elements founds</p>)
+            (<span><FormattedMessage id="noItemFound" /></span>)
             :
-            (<p>{totalResults} elements founds</p>)
+            (<span>{totalResults} <FormattedMessage id="itemsFound" /></span>)
         }
       </div>
       <div className="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen p-4">
