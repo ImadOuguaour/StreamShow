@@ -8,8 +8,8 @@ import { Tv } from "../../pages/Tv/TvTypes";
 const FeaturedMedia: React.FC<{ media: Movie | Tv }> = ({ media }) => {
   const title = 'title' in media ? media.title : media.name;
   return(
-    <div className="mb-8">
-      <h2 className="text-2xl font-bold mb-4 text-white">
+    <div className="mb-8 p-8">
+      <h2 className="text-xl font-bold mb-4 text-white">
         <FormattedMessage id="showingNow" />
       </h2>
       <div className="relative">

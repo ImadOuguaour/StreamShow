@@ -11,12 +11,12 @@ const MediaList: React.FC<MediaListProps> = ({
 }) => {
     return (
         <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 m-auto justify-center ">
                 {medias.map((media) => (
                     <MediaCard key={media.id} media={media} />
                 ))}
             </div>
-            <div className="flex justify-between mt-4">
+            <div className="flex justify-between m-4">
                 <button
                     className="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50"
                     disabled={currentPage === 1}

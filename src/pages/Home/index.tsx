@@ -29,7 +29,7 @@ const Home: React.FC = () => {
   }
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen p-4">
+    <div className="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen p-1">
       {
         loadingPopularMovies ? 
         (
@@ -44,7 +44,7 @@ const Home: React.FC = () => {
           :
           (
             <>
-              <h2 className="text-2xl font-bold mt-8 mb-4 text-white">
+              <h2 className="text-xl font-bold mt-8 mb-6 text-white ml-12">
                 <FormattedMessage id="popularMovies" />
               </h2>
               <MediaSlider medias={popularMovies} sliderSettings={sliderSettings}/>
@@ -66,7 +66,7 @@ const Home: React.FC = () => {
           :
           (
             <>
-              <h2 className="text-2xl font-bold mt-8 mb-4 text-white">
+              <h2 className="text-xl font-bold mt-8 mb-6 text-white ml-12">
                 <FormattedMessage id="popularTv" />
               </h2>
               <MediaSlider medias={popularTv} sliderSettings={sliderSettings}/>

@@ -10,7 +10,7 @@ export const MediaSlider: React.FC<{ medias: Movie[] | Tv[], sliderSettings: obj
     <>
       <Slider {...sliderSettings}>
         {medias.map((media) => (
-          <div key={media.id} className="p-2">
+          <div key={media.id} className="flex p-2 m-auto justify-center">
             <MediaCard media={media} />
           </div>
         ))}

@@ -9,17 +9,17 @@ const Header: React.FC = () => {
       <div className="mx-auto flex flex-wrap justify-between items-center">
         <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 md:mr-4">
           <li>
-            <Link className="text-white hover:text-gray-400" to="/">
+            <Link className="text-white text-2xl hover:text-gray-400" to="/">
               <FormattedMessage id="home" />
             </Link>
           </li>
           <li>
-            <Link className="text-white hover:text-gray-400" to="/movies">
+            <Link className="text-white text-2xl hover:text-gray-400" to="/movies">
               <FormattedMessage id="movies" />
             </Link>
           </li>
           <li>
-            <Link className="text-white hover:text-gray-400" to="/series">
+            <Link className="text-white text-2xl hover:text-gray-400" to="/series">
               <FormattedMessage id="series" />
             </Link>
           </li>
@@ -29,9 +29,9 @@ const Header: React.FC = () => {
           <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 md:mr-4">
             <li>
               <Link to="/search">
-                <span className="text-white hover:text-gray-400"><FormattedMessage id="search"/></span>
+                <span className="text-white text-2xl hover:text-gray-400"><FormattedMessage id="search"/></span>
                 <button
-                  className="p-2 bg-transparent text-blue-500 rounded-md focus:outline-none"
+                  className="p-4 bg-transparent text-white rounded-md focus:outline-none"
                   type="button"
                 >
                   <FaSearch />

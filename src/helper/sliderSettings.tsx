@@ -6,11 +6,17 @@ const sliderSettings : object = {
     autoplay: true,
     autoplaySpeed: 3000,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 7,
     slidesToScroll: 4,
     nextArrow: <ButtonNext />,
     prevArrow: <ButtonPrev />,
     responsive: [
+        {
+            breakpoint: 1750,
+            settings: {
+                slidesToShow: 6,
+            },
+        },
         {
             breakpoint: 1400,
             settings: {

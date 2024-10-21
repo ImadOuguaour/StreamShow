@@ -15,7 +15,7 @@ const MediaCard: React.FC<MediaCardProps> = ({ media }) => {
     const title = 'title' in media ? media.title : media.name;
 
     return (
-        <div className="media-card bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 relative w-64 ml-10 mr-0">
+        <div className="media-card bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 relative w-64 justify-center justify-self-center">
             <img 
                 alt={title} 
                 className="w-62 h-auto object-cover" 

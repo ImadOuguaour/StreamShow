@@ -28,7 +28,7 @@ const Tv: React.FC = () => {
     };
 
     return (
-      <div className="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen p-4">
+      <div className="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen overflow-hidden">
         {tv?.length > 0 && <FeaturedMedia media={tv[0]} />}
         <DisplayMedia
           currentPage={currentPage}
