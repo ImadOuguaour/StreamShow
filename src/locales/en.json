@@ -9,5 +9,6 @@
     "popularMovies": "Popular Movies",
     "popularTv": "Popular Series",
     "noItemFound": "No movie/serie found",
-    "itemsFound": "Movie/Serie found"
+    "itemsFound": "Movie/Serie found",
+    "page": "Page"
 }

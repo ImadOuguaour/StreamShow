@@ -11,7 +11,7 @@ export const fetchMovies = (page: number = 1): AppThunk => async (dispatch) => {
     dispatch(fetchMoviesInit());
     try {
         const response = await axios.get(`${TMDB_API_URL}/discover/movie?api_key=${API_KEY}&page=${page}`);
-        dispatch(fetchMoviesSuccess(response.data.results));
+        dispatch(fetchMoviesSuccess(response.data));
     } catch (err) {
         console.log("error when fetching movies : ", err);
         dispatch(fetchMoviesFailed());

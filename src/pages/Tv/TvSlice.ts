@@ -9,7 +9,8 @@ const initialState: TvState = {
   errorTv: null,
   detailsTv: null,
   errorDetailsTv: null,
-  loadingDetailsTv: false
+  loadingDetailsTv: false,
+  totalPages:1
 };
 
 const TvSlice = createSlice({
@@ -19,14 +20,17 @@ const TvSlice = createSlice({
     fetchTvFailed: (state) =>{
         state.loadingTv = false;
         state.errorTv = 'Series data not available';
+        state.totalPages = 1;
     },
     fetchTvSuccess: (state, action) =>{
         state.loadingTv = false;
-        state.tv= action.payload;
+        state.tv= action.payload.results;
+        state.totalPages = action.payload.total_pages;
     },
     fetchTvInit: (state) =>{
         state.loadingTv= true;
         state.errorTv = null;
+        state.totalPages= 1;
     },
     fetchDetailsTvFailed: (state) =>{
       state.loadingDetailsTv = false;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import MediaCard from '../MediaCard';
 import { MediaListProps } from '../../pages/Movies/MoviesTypes';
@@ -6,9 +7,11 @@ import { MediaListProps } from '../../pages/Movies/MoviesTypes';
 const MediaList: React.FC<MediaListProps> = ({
     medias,
     currentPage,
+    totalPages,
     onNextPage,
     onPreviousPage,
 }) => {
+    console.log(totalPages," et current : ",currentPage);
     return (
         <>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 m-auto justify-center ">
@@ -24,9 +27,10 @@ const MediaList: React.FC<MediaListProps> = ({
                 >
                     Previous
                 </button>
-                <span className="text-white">Page {currentPage}</span>
+                <span className="text-white"><FormattedMessage id='page'/> {currentPage} / {totalPages}</span>
                 <button
-                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                    className="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50"
+                    disabled={currentPage === totalPages}
                     onClick={onNextPage}
                 >
                     Next

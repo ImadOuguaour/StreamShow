@@ -9,7 +9,7 @@ import { fetchMovies } from "./MoviesThunks";
 
 const Movies: React.FC = () => {
     const dispatch = useAppDispatch();
-    const { movies, loadingMovies, errorMovies } = useAppSelector((state: RootState) => state.movies);
+    const { movies, loadingMovies, errorMovies, totalPages } = useAppSelector((state: RootState) => state.movies);
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
@@ -35,6 +35,7 @@ const Movies: React.FC = () => {
           medias={movies}
           onNextPage={handleNextPage}
           onPreviousPage={handlePreviousPage}
+          totalPages={totalPages}
         />
       </div>
     );

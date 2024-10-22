@@ -23,11 +23,13 @@ interface MoviesState {
     movie: null | Movie;
     loadingDetailsMovie: boolean;
     errorDetailMovie: string | null;
+    totalPages: number
 }
 
 interface MediaListProps {
     medias: Movie[] | Tv[] | SearchResult[];
     currentPage: number;
+    totalPages: number,
     onNextPage: () => void;
     onPreviousPage: () => void; 
 }

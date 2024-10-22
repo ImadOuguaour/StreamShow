@@ -12,6 +12,7 @@ interface DisplayMediaProps {
   error: null | string;
   medias: Movie[] | Tv[] | SearchResult[];
   currentPage: number;
+  totalPages: number;
   onNextPage: () => void;
   onPreviousPage: () => void;
 }
@@ -21,6 +22,7 @@ const DisplayMedia: React.FC<DisplayMediaProps> = ({
   error,
   medias,
   currentPage,
+  totalPages,
   onNextPage,
   onPreviousPage,
 }) => {
@@ -38,6 +40,7 @@ const DisplayMedia: React.FC<DisplayMediaProps> = ({
       medias={medias}
       onNextPage={onNextPage}
       onPreviousPage={onPreviousPage}
+      totalPages={totalPages}
     />
   );
 };

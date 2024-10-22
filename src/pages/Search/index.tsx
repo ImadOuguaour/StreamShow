@@ -13,7 +13,7 @@ const Search: React.FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const [searchValue, setSearchValue] = useState<string>(() => searchParams.get('search') || '');
     const [currentPage, setCurrentPage] = useState(1);
-    const { resultSearch, loading, error, totalResults } = useAppSelector((state: RootState) => state.search);
+    const { resultSearch, loading, error, totalResults, totalPages } = useAppSelector((state: RootState) => state.search);
     const dispatch = useAppDispatch();
     const intl = useIntl();
 
@@ -77,6 +77,7 @@ const Search: React.FC = () => {
               medias={resultSearch}
               onNextPage={handleNextPage}
               onPreviousPage={handlePreviousPage}
+              totalPages= {totalPages}
           />
       )}
       </div>

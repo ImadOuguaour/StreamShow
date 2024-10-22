@@ -17,7 +17,8 @@ interface TvState {
     errorTv: null | string,
     detailsTv: null | Tv,
     errorDetailsTv: null | string,
-    loadingDetailsTv: boolean
+    loadingDetailsTv: boolean,
+    totalPages: number
 };
 
 export type {TvState, Tv};

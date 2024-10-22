@@ -9,7 +9,7 @@ import { fetchTv } from "./TvThunks";
 
 const Tv: React.FC = () => {
     const dispatch = useAppDispatch();
-    const { tv, loadingTv, errorTv } = useAppSelector((state: RootState) => state.series);
+    const { tv, loadingTv, errorTv, totalPages } = useAppSelector((state: RootState) => state.series);
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
@@ -37,6 +37,7 @@ const Tv: React.FC = () => {
           medias={tv}
           onNextPage={handleNextPage}
           onPreviousPage={handlePreviousPage}
+          totalPages={totalPages}
         />
       </div>
     );

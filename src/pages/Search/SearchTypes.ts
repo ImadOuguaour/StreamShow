@@ -15,6 +15,7 @@ interface SearchState {
     loading: boolean,
     error: null | string,
     totalResults: number,   
+    totalPages: number
 }
 
 export type {SearchState , SearchResult}

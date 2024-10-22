@@ -7,6 +7,7 @@ const initialState: SearchState = {
   loading: false,
   error: null,
   totalResults: 0,
+  totalPages:1,
 };
 
 const SearchSlice = createSlice({
@@ -16,11 +17,14 @@ const SearchSlice = createSlice({
     fetchSearchFailed: (state) =>{
         state.loading = false;
         state.error = 'Movies or Séries data not available';
+        state.totalResults = 0;
+        state.totalPages = 1;
     },
     fetchSearchSuccess: (state, action) => {
         state.loading = false;
         state.resultSearch= action.payload.results;
         state.totalResults = action.payload.total_results;
+        state.totalPages = action.payload.total_pages;
     },
     fetchSearchInit: (state) =>{
         state.loading= true;
@@ -31,6 +35,7 @@ const SearchSlice = createSlice({
       state.error = null;
       state.resultSearch = [];
       state.totalResults = 0;
+      state.totalPages = 1;
     }
   },
 });

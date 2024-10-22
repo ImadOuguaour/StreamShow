@@ -8,7 +8,8 @@ const initialState: MoviesState = {
   errorMovies: null,
   movie: null,
   loadingDetailsMovie: false,
-  errorDetailMovie: null
+  errorDetailMovie: null,
+  totalPages: 1
 };
 
 const MoviesSlice = createSlice({
@@ -18,14 +19,17 @@ const MoviesSlice = createSlice({
     fetchMoviesFailed: (state) =>{
         state.loadingMovies = false;
         state.errorMovies = 'Movies data not available';
+        state.totalPages = 1;
     },
     fetchMoviesSuccess: (state, action) =>{
         state.loadingMovies = false;
-        state.movies= action.payload;
+        state.movies= action.payload.results;
+        state.totalPages = action.payload.total_pages;
     },
     fetchMoviesInit: (state) =>{
         state.loadingMovies= true;
         state.errorMovies = null;
+        state.totalPages = 1;
     },
     fetchDetailsMovieFailed: (state) =>{
       state.loadingDetailsMovie = false;
