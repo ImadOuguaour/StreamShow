@@ -79,6 +79,4 @@ const ModalMedia: React.FC<ModalMediaProps> = ({ isOpen, onClose, media }) => {
     );
 };
 
-Modal.setAppElement('#root');
-
 export default ModalMedia;
