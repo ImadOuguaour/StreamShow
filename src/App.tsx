@@ -21,7 +21,7 @@ const App: React.FC = () => {
             <Route element={<Home />} path="/" />
             <Route element={<Movies />} path="/movies" />
             <Route element={<Tv />} path="/series" />
-            <Route element={<Search/>} path='/search' />
+            <Route element={<Search/>} path='/search/:media?' />
           </Routes>
         </Suspense>
     </IntlProvider>

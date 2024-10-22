@@ -10,8 +10,8 @@ import { fetchSearch } from "./SearchThunk";
 import { clearSearch } from "./SearchSlice";
 
 const Search: React.FC = () => {
-    const [searchParams, setSearchParams] = useSearchParams();
-    const [searchValue, setSearchValue] = useState<string>(() => searchParams.get('search') || '');
+    const [mediaParam, setMediaParam] = useSearchParams();
+    const [searchValue, setSearchValue] = useState<string>(() => mediaParam.get('media') || '');
     const [currentPage, setCurrentPage] = useState(1);
     const { resultSearch, loading, error, totalResults, totalPages } = useAppSelector((state: RootState) => state.search);
     const dispatch = useAppDispatch();
@@ -22,13 +22,13 @@ const Search: React.FC = () => {
 
     useEffect(() => {
       if (debouncedSearchValue) {
-          setSearchParams({ search: debouncedSearchValue });
+          setMediaParam({ media: debouncedSearchValue });
       } else {
-          searchParams.delete('search');
-          setSearchParams(searchParams);
+          mediaParam.delete('media');
+          setMediaParam(mediaParam);
           dispatch(clearSearch());
       }
-    }, [debouncedSearchValue, searchParams, setSearchParams, dispatch]);
+    }, [debouncedSearchValue, mediaParam, setMediaParam, dispatch]);
 
     useEffect(() => {
       if (debouncedSearchValue) {
