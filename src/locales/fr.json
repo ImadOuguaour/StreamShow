@@ -10,5 +10,8 @@
     "popularTv": "Séries populaires",
     "noItemFound": "Aucun film/série trouvé",
     "itemsFound": "Film/Série trouvés",
-    "page": "Page"
+    "page": "Page",
+    "backHome": "Revenir à l'Accueil",
+    "404": "Oops! Page Non Trouvé",
+    "pageNotFoundMessage": "La page que vous cherchez n'existe pas."
 }
