@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { FaBars, FaStar } from 'react-icons/fa';
 
 import { IMAGE_API_URL } from '../../constants/config'; 
@@ -43,4 +43,4 @@ const MediaCard: React.FC<MediaCardProps> = ({ media }) => {
     );
 };
 
-export default MediaCard;
+export default memo(MediaCard);

@@ -47,6 +47,7 @@
     "gh-pages": "^6.2.0",
     "globals": "^15.11.0",
     "jsdom": "^25.0.1",
+    "matchmedia-polyfill": "^0.3.2",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
     "typescript": "5.5.4",

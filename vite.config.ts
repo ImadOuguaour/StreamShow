@@ -7,7 +7,8 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    setupFiles: './tests/setup.js',
+    setupFiles: './tests/setup.ts',
+    testTimeout: 10000,
   },
   base: "/StreamShow/"
 })

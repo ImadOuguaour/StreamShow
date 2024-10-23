@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 import Modal from 'react-modal';
 import { FaXmark } from 'react-icons/fa6';
 
@@ -79,4 +79,4 @@ const ModalMedia: React.FC<ModalMediaProps> = ({ isOpen, onClose, media }) => {
     );
 };
 
-export default ModalMedia;
+export default memo(ModalMedia);

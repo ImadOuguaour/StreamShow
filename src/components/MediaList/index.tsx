@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import MediaCard from '../MediaCard';
@@ -21,6 +21,7 @@ const MediaList: React.FC<MediaListProps> = ({
             </div>
             <div className="flex justify-between m-4">
                 <button
+                    aria-label="Previous"
                     className="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50"
                     disabled={currentPage === 1}
                     onClick={onPreviousPage}
@@ -29,6 +30,7 @@ const MediaList: React.FC<MediaListProps> = ({
                 </button>
                 <span className="text-white"><FormattedMessage id='page'/> {currentPage} / {totalPages}</span>
                 <button
+                    aria-label="Next"
                     className="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50"
                     disabled={currentPage === totalPages}
                     onClick={onNextPage}
@@ -40,4 +42,4 @@ const MediaList: React.FC<MediaListProps> = ({
     );
 };
 
-export default MediaList;
+export default memo(MediaList);

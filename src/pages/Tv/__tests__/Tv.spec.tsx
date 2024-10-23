@@ -6,13 +6,13 @@ import { renderWithStore } from '../../../../tests/testsUtils';
 
 import '@testing-library/jest-dom';
 
-import Movies from '..';
+import Tv from '..';
 
 describe('Test Movies', () => {
   beforeEach(()=>{
-    renderWithStore(<Movies/>)
+    renderWithStore(<Tv/>)
   })
-  it('renders the Movies component', async () => {
+  it('renders the Tv component', async () => {
     expect(screen.getByText("Loading...")).toBeInTheDocument();
     expect(await screen.findByText("Now Showing")).toBeInTheDocument();
   })
